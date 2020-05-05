@@ -35,7 +35,7 @@ def userlogin(request):
             login(request, user)
             AllLogin.objects.create(user=request.user)
 
-            return redirect('homepage')
+        return redirect('homepage')
 
     return render(request, 'accounts/userlogin.html')
 

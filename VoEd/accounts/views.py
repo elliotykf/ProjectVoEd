@@ -3,12 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from .models import AllLogin
 from django.contrib.auth import authenticate, login, logout
-import datetime
 
-
-# Create your views here.
-
-
+# Create0 views.
 def gate(request):
     #when the gate view is called, the gate.html will be displayed to users
     return render(request, 'accounts/gate.html')
@@ -50,3 +46,8 @@ def userlogin(request):
     #if the user is not authenticated, return to the login page
     return render(request, 'accounts/userlogin.html')
 
+# def userlogout(request):
+#     AllLogout.objets.create(user)
+#     logout(request)
+#
+#     return render(request, 'accounts/userlogout.html')

@@ -3,3 +3,4 @@ from accounts.models import AllLogin
 
 # Register your models here.
 admin.site.register(AllLogin)
+# admin.site.register(AllLogout)

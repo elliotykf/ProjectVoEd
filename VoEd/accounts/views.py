@@ -14,7 +14,7 @@ def homepage(request):
     return render(request, 'accounts/home.html')
 
 def registration(request):
-    form = CreateUserForm()
+    form = UserCreationForm()
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():

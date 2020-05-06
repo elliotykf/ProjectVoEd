@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
-from .models import AllLogin
+from .forms import helpStatisticsTrackerForm
+from .models import *
 from django.contrib.auth import authenticate, login, logout
 
 # Create0 views.
@@ -51,3 +51,20 @@ def userlogin(request):
 #     logout(request)
 #
 #     return render(request, 'accounts/userlogout.html')
+
+
+def helpStatisticsTracker(request):
+    helpStat = helpStatistics.objects.all()
+
+    form = helpStatisticsTrackerForm()
+    if request.method == 'POST':
+        form = helpStatisticsTrackerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('helpStatisticsTracker')
+
+
+
+    context = {'form': form}
+    return render(request, 'accounts/helpstatistics.html', {'form': form, 'helpStatistics': helpStat})
+

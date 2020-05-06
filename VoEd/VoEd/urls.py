@@ -23,5 +23,6 @@ urlpatterns = [
     path('', views.gate, name='gate'),
     path('login/', views.userlogin, name='login'),
     path('homepage/', views.homepage, name='homepage'),
-    # path('logout/', views.userlogout, name='userlogout')
+    # path('logout/', views.userlogout, name='userlogout'),
+    path('helpStatistics/', views.helpStatisticsTracker, name='helpStatisticsTracker')
 ]
